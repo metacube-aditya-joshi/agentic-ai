@@ -1,7 +1,8 @@
 import datetime
+from pydantic import BaseModel
 from src.file_manager import open_json  # your JSON helper
 
-class Request:
+class Request(BaseModel):
     def __init__(self, description, client, project):
         # Load existing requests
         requests = open_json("requests.json", "read") or []

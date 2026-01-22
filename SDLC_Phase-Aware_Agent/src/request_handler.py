@@ -6,7 +6,7 @@ from user_interface.user_interaction_handler import ai_menu
 data_file = DATA_DIR/"requests.json"
 data = pd.read_json(data_file)
 
-def Menu():
+async def Menu():
     print("Which funcitonlity you want to perform :" \
     " \n1. Add Request " \
     "\n2. View Request " \
@@ -30,7 +30,7 @@ def Menu():
     elif option_selected =="6":
         data_plotting(data=data)
     elif option_selected =="7" :
-        ai_menu()
+       await ai_menu()
     else :
         return
     
